@@ -88,7 +88,7 @@ export function runSaga(options, saga, ...args) {
 
   try {
     suspend()
-    const task = proc(env, iterator, context, effectId, getMetaInfo(saga), true, noop)
+    const task = proc(env, iterator, context, effectId, getMetaInfo(saga), /* isRoot */ true, noop)
 
     if (sagaMonitor) {
       sagaMonitor.effectResolved(effectId, task)
